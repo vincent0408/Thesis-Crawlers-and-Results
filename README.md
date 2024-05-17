@@ -25,7 +25,7 @@ All datetime related values have the format `%y/%m/%d-%H:%M:%S`, and converted t
 |41289840967|65653595|roger9527|138585|Hearthstone|8919|24/05/11-21:42:34|zh|False|24/05/11-23:00:00|24/05/11-23:03:51|GPSV|
 #### content_classification_labels
 |Content Classification Label|Abbreviation|
-|-|-|
+|:-|-|
 |Mature-Rated Game|M|
 |Gambling|G|
 |Profanity or Vulgarity|P|
@@ -73,7 +73,7 @@ These are the scripts used to generate the plots or statistics used in the thesi
 
 ## Jupyter Notebooks
 |File Name|Usage Description|
-|-|-|
+|:-|:-|
 |conformity_21Nov|Check the conformity ratio using the is_mature value from 2021 Nov~Dec dataset|
 |conformity_23Mar|Check the conformity ratio using the is_mature value from 2023 Feb~Mar dataset|
 |conformity_ccl|Check the conformity ratio using the Content Classification Labels from 2024 Mar dataset|
@@ -85,15 +85,15 @@ These are the scripts used to generate the plots or statistics used in the thesi
 
 ## Python File
 |File Name|Usage Description|
-|-|-|
+|:-|:-|
 |utils|Commonly used functions, including separation of the 6 crawl csv file into list of dataframes and merging the origin back to the stream it belongs.| 
 
 # Improvements and Future Work
 
 Several improvements could have been made, but due to the lack of need or "If the code works, don't touch it!", these improvements have yet to be implemented, and could potentially improve the quailty for some code segments.
 
-1. As mentioned earlier (also in the tutorial video), `apscheduler` was used mainly for backward compatibility, specifically the usage of `BlockingScheduler`. Performing asynchronous tasks in a blocking environment is weird enough on its own, not to mention the privat. variable had to be accessed in order to get the amount of instances. Changing the scheduler to `AsyncScheduler` or just another package may help.
+1. As mentioned earlier (also in the tutorial video), `apscheduler` was used mainly for backward compatibility, specifically the usage of `BlockingScheduler`. Performing asynchronous tasks in a blocking environment is weird enough on its own, not to mention the private variable had to be accessed in order to get the amount of instances. Changing the scheduler to `AsyncScheduler` or just another package may help.
 
-2. Getting the Master Playlist from Usher is a simple process when the stream itself is in fact, using the basic streaming settings. However, some streams are unique, and additional measures had to be applied to prevent Usher simply sending back an error message. Take DRM protected streams as an example, an additional `'cdm': 'wv'` in the GET parameters is needed when requesting DRM protected streams, but this is just one of the many errors that I did managed to solve. 
-On average, 98%+ of the streams can be fetched using the current code, but for the remaining 1%, it is still worthwhile to get their Master Playlist. One of the errors occurs when requesting subscriber-only streams, which when one tries to view it via browser, should give you a 6 minute preview, allowing us to get the Master Playlist this way. But due to not being a subscriber, GQL servers block you from getting the sPAToken when executing the Usher crawler. The major difference is that Usher crawler does not require a user account, therefore cannot receive the 6 minute preview benefit. How this issue can be solved requires more effort.
-These streams can attract many viewers within a specific time period, e.g. the CPBL (中華職棒大聯盟) related channels can attract up to 7k viewers when streaming baseball games during 1830~2200 on weekdays, and 1700~2030 on weekends, accounting for ~10% of Chinese viewer count.
+2. Getting the Master Playlist from Usher is a simple process when the stream itself is in fact, using the basic streaming settings. However, some streams are unique, and additional measures had to be applied to prevent Usher simply sending back an error message. Take DRM protected streams as an example, an additional `'cdm': 'wv'` in the GET parameters is needed when requesting DRM protected streams, but this is just one of the many errors that I did managed to solve. \
+On average, 98%+ of the streams can be fetched using the current code, but for the remaining 1%, it is still worthwhile to get their Master Playlist. One of the errors occurs when requesting subscriber-only streams, which when one tries to view it via browser, should give you a 6 minute preview, allowing us to get the Master Playlist this way. But due to not being a subscriber, GQL servers block you from getting the sPAToken when executing the Usher crawler. The major difference is that Usher crawler does not require a user account, therefore cannot receive the 6 minute preview benefit. How this issue can be solved requires more effort.\
+These streams can attract many viewers within a specific time period, e.g. the CPBL (中華職棒大聯盟) related channels can attract up to 7k viewers when streaming baseball games during 1830 ~ 2200 on weekdays, and 1700 ~ 2030 on weekends, accounting for ~10% of Chinese viewer count.
