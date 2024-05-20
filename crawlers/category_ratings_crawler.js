@@ -24,9 +24,11 @@ async function getRes(){
                     // maybe different depending on browser and individual behavior
                     if(ele_lst.length == 10){
                         res.push([games[i], "F"]);
+                        console.log(games[i], "F");
                     }
                     else if(ele_lst.length == 11){
                         res.push([games[i], "T"]);
+                        console.log(games[i], "T");
                     }
                     else{
                         console.log(games[i], 'failed');

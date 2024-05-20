@@ -116,7 +116,7 @@ def send_error_to_line(msg):
     return r.status_code
 
 async def main():
-    sda_data_path = '/mnt/sda/tnecniv/tnecniv-2023/'
+    sda_data_path = './test/'   # '/mnt/sda/tnecniv/tnecniv-2023/'
     start = datetime.now()
     print(f'Crawl started at {start.strftime("%Y/%m/%d-%H:%M:%S")}')
     os.makedirs(sda_data_path + start.strftime('%Y-%U/'), exist_ok=True)
@@ -128,5 +128,5 @@ async def main():
 if __name__ == '__main__':
     sched = BlockingScheduler(timezone='Asia/Taipei')
     sched.add_job(lambda: asyncio.run(main()), 'cron', minute='*/10',
-                   max_instances=6, misfire_grace_time=60)
+                   max_instances=6, misfire_grace_time=60) # next_run_time=datetime.now()
     sched.start()  

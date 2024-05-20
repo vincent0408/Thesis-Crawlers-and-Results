@@ -1,0 +1,2 @@
+240520-150702, started at 2024/05/20-15:07:02, saved last_crawl.csv at 2024/05/20-15:08:54, ended at 2024/05/20-15:11:40, used 0:04:38
+240520-151000, started at 2024/05/20-15:10:00, saved last_crawl.csv at 2024/05/20-15:11:53, ended at 2024/05/20-15:14:45, used 0:04:45

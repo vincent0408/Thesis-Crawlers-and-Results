@@ -139,13 +139,13 @@ def main():
 def prepare_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--time_interval', type=int, default=10)  # minutes
-    parser.add_argument('--execute_frequency', type=float, default=25)    # Hz
-    parser.add_argument('--sda_data_path', type=str, default='/mnt/sda/tnecniv/tnecniv-2023/')
+    parser.add_argument('--execute_frequency', type=float, default=0.25)    # Hz
+    parser.add_argument('--sda_data_path', type=str, default='./test/')  #'/mnt/sda/tnecniv/tnecniv-2023/'
     args = parser.parse_args()
     return args
 
 if(__name__ == '__main__'):
     args = prepare_args()
     scheduler = BlockingScheduler(timezone='Asia/Taipei')
-    scheduler.add_job(lambda: main(),'cron', minute=f'8/{args.time_interval}', max_instances=2, next_run_time=datetime.now(), id='nslab', misfire_grace_time=20)
+    scheduler.add_job(lambda: main(),'cron', minute=f'8/{args.time_interval}', max_instances=2, id='nslab', misfire_grace_time=20)
     scheduler.start() 
