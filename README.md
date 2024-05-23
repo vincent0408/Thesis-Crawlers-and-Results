@@ -1,7 +1,7 @@
 # Thesis-Crawlers-and-Results
 I recorded some *Tutorial Videos*, which may help understanding the code and usage.
 
-[ssh login and Twitch data location](https://youtu.be/-39Zo2kNJss)\
+[ssh login and Twitch dataset location](https://youtu.be/-39Zo2kNJss)\
 [brief introduciton on usage and results](https://youtu.be/4GHOwzDkVVY)\
 [executing each script](https://youtu.be/pujqppMHNxE)
 
