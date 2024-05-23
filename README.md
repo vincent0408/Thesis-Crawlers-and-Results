@@ -2,7 +2,7 @@
 I recorded some *Tutorial Videos*, which may help understanding the code and usage.
 
 [ssh login and Twitch dataset location](https://youtu.be/-39Zo2kNJss)\
-[brief introduction on usage and results](https://youtu.be/4GHOwzDkVVY)\
+[brief introduction to code usage and results](https://youtu.be/4GHOwzDkVVY)\
 [executing each script](https://youtu.be/pujqppMHNxE)
 
 
