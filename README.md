@@ -1,12 +1,19 @@
 # Thesis-Crawlers-and-Results
+I recorded some *Tutorial Videos*, which may help understanding the code and usage.
+
+[ssh login and Twitch data location](https://youtu.be/-39Zo2kNJss)
+[brief introduciton on usage and results](https://youtu.be/4GHOwzDkVVY)
+[executing each script](https://youtu.be/pujqppMHNxE)
+
+
 # Crawlers
-I recommend the [Tutorial Video](https://www.youtube.com/watch?v=4GHOwzDkVVY), which explains much more like the functions and the parameters of each crawler.
 
 ## Helix Crawler
 The Helix Crawler fetches data from the [Get Streams](https://dev.twitch.tv/docs/api/reference/#get-streams) and [Get Channel Information](https://dev.twitch.tv/docs/api/reference/#get-channel-information) endpoints. The results are combined and stored in csv format for readability. To run it with default parameters, simply execute `python3 helix_crawler.py`
 
 ### File Structure
 Each csv file contains the 6 crawls from the respective hour, this is to save the amount of files but extra splitting in real-time is inevitably needed. The parent folder is named after the week number (`%Y-%U/`), check the [documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) for more details.
+Each week, ~12GB is used for the Helix dataset.
 
 ```
 ./2024-19/
@@ -42,6 +49,8 @@ To implement the JavaScript asynchronous behavior used in Kukudy, `asyncio` and 
 At the start of each instance, there is a spinlock checking if `lock` exists. If so, it indicates that the last instance has not finished its exectution, and the new instance should pause to avoid race condition. As for the last/old instance, it checks if another instance exists whenever it records a new origin, this is done by visiting the private variable `._executors['default']._instances['nslab']` which was not meant to be used by the public, and the behavior may change as `apscheduler` updates. When a newer instance is detected, the instance saves its results and removes `lock`, freeing the newe instance from the spinlock.
 
 ### File Structure
+Each day, ~25M is used for the Usher dataset.
+
 ```
 ./daily_origin/
 ├── 240516.csv
