@@ -83,13 +83,15 @@ These are the scripts used to generate the plots or statistics used in the thesi
 ## Jupyter Notebooks
 |File Name|Usage Description|
 |:-|:-|
-|conformity_21Nov|Check the conformity ratio using the is_mature value from 2021 Nov~Dec dataset|
-|conformity_23Mar|Check the conformity ratio using the is_mature value from 2023 Feb~Mar dataset|
-|conformity_ccl|Check the conformity ratio using the Content Classification Labels from 2024 Mar dataset|
+|ccl_24May|Generate descriptive statistics from 2024 May dataset|
+|conformity_21Nov|Check the conformity ratio using the is_mature value from 2021 Nov ~ Dec dataset|
+|conformity_23Mar|Check the conformity ratio using the is_mature value from 2023 Feb ~ Mar dataset|
+|conformity_24Mar|Check the conformity ratio using the Content Classification Labels from 2024 Mar dataset|
 |lang_popularity|Plot the language popularity of each continent|
-|ol_filter_23Aug|Successfully separate Europe and America user distribution using the (origin, language) filter|
-|ol_filter_current|Applying the (origin, language) filter on more recent data|
-|twitch_korea_exit|Case study of Twitch leaving the Korean market with (origin, language) filtering and mature content analysis|
+|lo_filter_23Aug|Successfully separate Europe and America user distribution using the (language, origin) filter|
+|lo_filter_24Mar|Applying the (language, origin) filter on 2024 March dataset|
+|lo_filter_24May|Applying the (language, origin) filter on 2024 May dataset|
+|twitch_korea_exit|Case study of Twitch leaving the Korean market with (language, origin) filtering and mature content analysis|
 |week_category_popularity|get the category popularity of selected week(s)|
 
 ## Python File
